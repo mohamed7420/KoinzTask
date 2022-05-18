@@ -10,7 +10,9 @@ target 'KoinzTask' do
  pod 'RxSwift'
  pod 'RxCocoa'
  pod 'Alamofire', '~> 5.1'
-
+ pod 'Kingfisher'
+ pod 'NVActivityIndicatorView'
+ 
   target 'KoinzTaskTests' do
     inherit! :search_paths
     # Pods for testing

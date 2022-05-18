@@ -7,19 +7,24 @@
 
 import UIKit
 
-class MovieListViewController: UIViewController {
-
+class MovieListViewController: BaseViewController , MovieListViewProtocol {
+    
     @IBOutlet weak var tableView: UITableView!
     
-    private var genericTableViewDataSource: GenericTableViewDataSource<Movie , MovieTableCell>?
+    private var genericTableViewDataSource: GenericTableViewDataSource<MovieListResponse , MovieTableCell>?
+    var presenter: MovieListPresenterProtocol?
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter = MovieListPresenter(view: self)
+        presenter?.getAllPhotos(model: MoviePhoto(method: "flickr.photos.search", format: "json&nojsoncallback", nojsoncallback: 50, text: "Color", page: 1, per_page: 20, api_key: "d17378e37e555ebef55ab86c4180e8dc"))
+        
         initTableView()
     }
     
     private func initTableView(){
-        genericTableViewDataSource = GenericTableViewDataSource.init(items: Movie.fetchAllMovies(), tableView: tableView, configureCollectionCell: {[weak self] cell, indexPath , item  in
+        genericTableViewDataSource = GenericTableViewDataSource.init(items: [], tableView: tableView, configureCollectionCell: {[weak self] cell, indexPath , item  in
             guard let _ = self else {return}
             
             
@@ -43,4 +48,10 @@ class MovieListViewController: UIViewController {
         }
     }
 
+    
+    
+    func refresh() {
+        
+    }
+    
 }

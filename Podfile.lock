@@ -1,5 +1,9 @@
 PODS:
   - Alamofire (5.5.0)
+  - Kingfisher (7.1.2)
+  - NVActivityIndicatorView (5.1.1):
+    - NVActivityIndicatorView/Base (= 5.1.1)
+  - NVActivityIndicatorView/Base (5.1.1)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
@@ -9,22 +13,28 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.1)
+  - Kingfisher
+  - NVActivityIndicatorView
   - RxCocoa
   - RxSwift
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Kingfisher
+    - NVActivityIndicatorView
     - RxCocoa
     - RxRelay
     - RxSwift
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  Kingfisher: 44ed6a8504763f27bab46163adfac83f5deb240c
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
 
-PODFILE CHECKSUM: 8530893a20ed964a6316d5ceb1a82321d81a3d2c
+PODFILE CHECKSUM: 1ac98b768d001048aae3773ef7a3dbef5d631399
 
 COCOAPODS: 1.11.2

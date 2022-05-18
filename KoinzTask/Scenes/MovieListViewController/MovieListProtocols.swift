@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+
+protocol MovieListViewProtocol: BaseViewProtocol{
+    var presenter: MovieListPresenterProtocol?{get set}
+    func refresh()
+}
+
+protocol MovieListPresenterProtocol: BasePresenterProtocol{
+    var view: MovieListViewProtocol?{get set}
+    func getAllPhotos(model: MoviePhoto)
+}

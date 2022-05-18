@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+import Foundation
+import RxSwift
+
+class RequestManager: APIClient {
+        
+    func getAllPhotos(model: MoviePhoto) -> Observable<MovieListResponse>{
+        return request(FlikrAPI.getMoviePhotos(model: model))
+    }
+
+}
