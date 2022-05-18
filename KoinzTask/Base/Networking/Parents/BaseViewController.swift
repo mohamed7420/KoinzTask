@@ -23,7 +23,7 @@ class BaseViewController: UIViewController, BaseViewProtocol, UIGestureRecognize
         self.loadingView?.centerX(inView: self.view)
         self.loadingView?.centerY(inView: self.view)
         self.loadingView?.type = .ballSpinFadeLoader
-        self.loadingView?.color = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        self.loadingView?.color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.loadingView?.padding = 0
 
     }

@@ -72,6 +72,11 @@ Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV witho
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="imagePhoto" destination="kwz-XA-YgQ" id="DIB-Cc-psQ"/>
+                <outlet property="lblDescription" destination="JiN-aY-gR9" id="dOt-3f-USg"/>
+                <outlet property="lblTitle" destination="er6-It-jV6" id="na7-rn-cbc"/>
+            </connections>
             <point key="canvasLocation" x="206.52173913043481" y="123.54910714285714"/>
         </tableViewCell>
     </objects>

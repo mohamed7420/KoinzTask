@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum StatusCases: String{
+    case success = "ok"
+    case fail = "fail"
+}
+
 struct MoviePhoto{
     let method: String
     let format: String
