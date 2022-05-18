@@ -17,6 +17,7 @@
 		8B06464D2834146100171886 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B06464C2834146100171886 /* APIClient.swift */; };
 		8B06464F2834146A00171886 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B06464E2834146A00171886 /* TargetType.swift */; };
 		8B0646512834156000171886 /* FlikrAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0646502834156000171886 /* FlikrAPI.swift */; };
+		8B064655283418DE00171886 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B064654283418DE00171886 /* Home.storyboard */; };
 		8B3A0AF72833D651009A2F84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A0AF62833D651009A2F84 /* AppDelegate.swift */; };
 		8B3A0AF92833D651009A2F84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A0AF82833D651009A2F84 /* SceneDelegate.swift */; };
 		8B3A0AFB2833D651009A2F84 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A0AFA2833D651009A2F84 /* ViewController.swift */; };
@@ -26,6 +27,9 @@
 		8B3A0B0E2833D652009A2F84 /* KoinzTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A0B0D2833D652009A2F84 /* KoinzTaskTests.swift */; };
 		8B3A0B182833D652009A2F84 /* KoinzTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A0B172833D652009A2F84 /* KoinzTaskUITests.swift */; };
 		8B3A0B1A2833D652009A2F84 /* KoinzTaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A0B192833D652009A2F84 /* KoinzTaskUITestsLaunchTests.swift */; };
+		8BAD70302835272C00F0494B /* MovieTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAD702E2835272C00F0494B /* MovieTableCell.swift */; };
+		8BAD70312835272C00F0494B /* MovieTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BAD702F2835272C00F0494B /* MovieTableCell.xib */; };
+		8BAD70342835287700F0494B /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAD70332835287700F0494B /* CustomView.swift */; };
 		E6B8C0032962090784749E0D /* Pods_KoinzTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045369A456FAA0BA5051443C /* Pods_KoinzTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +63,7 @@
 		8B06464C2834146100171886 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		8B06464E2834146A00171886 /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
 		8B0646502834156000171886 /* FlikrAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlikrAPI.swift; sourceTree = "<group>"; };
+		8B064654283418DE00171886 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		8B3A0AF32833D651009A2F84 /* KoinzTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoinzTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B3A0AF62833D651009A2F84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B3A0AF82833D651009A2F84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +77,9 @@
 		8B3A0B132833D652009A2F84 /* KoinzTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KoinzTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B3A0B172833D652009A2F84 /* KoinzTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoinzTaskUITests.swift; sourceTree = "<group>"; };
 		8B3A0B192833D652009A2F84 /* KoinzTaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoinzTaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8BAD702E2835272C00F0494B /* MovieTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableCell.swift; sourceTree = "<group>"; };
+		8BAD702F2835272C00F0494B /* MovieTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableCell.xib; sourceTree = "<group>"; };
+		8BAD70332835287700F0494B /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		8FB722E043983F1531C42AF1 /* Pods-KoinzTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoinzTask.debug.xcconfig"; path = "Target Support Files/Pods-KoinzTask/Pods-KoinzTask.debug.xcconfig"; sourceTree = "<group>"; };
 		928ACA9A95EA71E2ED9B8CD4 /* Pods-KoinzTask-KoinzTaskUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoinzTask-KoinzTaskUITests.release.xcconfig"; path = "Target Support Files/Pods-KoinzTask-KoinzTaskUITests/Pods-KoinzTask-KoinzTaskUITests.release.xcconfig"; sourceTree = "<group>"; };
 		99181D2C2646EEA8022CA3E4 /* Pods-KoinzTaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoinzTaskTests.release.xcconfig"; path = "Target Support Files/Pods-KoinzTaskTests/Pods-KoinzTaskTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -179,6 +187,7 @@
 		8B064653283415A200171886 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				8B064654283418DE00171886 /* Home.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -208,6 +217,8 @@
 		8B3A0AF52833D651009A2F84 /* KoinzTask */ = {
 			isa = PBXGroup;
 			children = (
+				8BAD70322835285E00F0494B /* View+Extension */,
+				8BAD702C2835270200F0494B /* Cells */,
 				8B064653283415A200171886 /* Storyboard */,
 				8B0646522834159300171886 /* Scenes */,
 				8B06463B2834138100171886 /* Base */,
@@ -238,6 +249,31 @@
 				8B3A0B192833D652009A2F84 /* KoinzTaskUITestsLaunchTests.swift */,
 			);
 			path = KoinzTaskUITests;
+			sourceTree = "<group>";
+		};
+		8BAD702C2835270200F0494B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8BAD702D2835270A00F0494B /* MovieTableCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8BAD702D2835270A00F0494B /* MovieTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				8BAD702E2835272C00F0494B /* MovieTableCell.swift */,
+				8BAD702F2835272C00F0494B /* MovieTableCell.xib */,
+			);
+			path = MovieTableCell;
+			sourceTree = "<group>";
+		};
+		8BAD70322835285E00F0494B /* View+Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8BAD70332835287700F0494B /* CustomView.swift */,
+			);
+			path = "View+Extension";
 			sourceTree = "<group>";
 		};
 		B42C7082CF8A86A88334D6B0 /* Frameworks */ = {
@@ -375,6 +411,8 @@
 				8B3A0B032833D652009A2F84 /* LaunchScreen.storyboard in Resources */,
 				8B3A0B002833D652009A2F84 /* Assets.xcassets in Resources */,
 				8B3A0AFE2833D651009A2F84 /* Main.storyboard in Resources */,
+				8B064655283418DE00171886 /* Home.storyboard in Resources */,
+				8BAD70312835272C00F0494B /* MovieTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,11 +546,13 @@
 				8B0646512834156000171886 /* FlikrAPI.swift in Sources */,
 				8B3A0AF72833D651009A2F84 /* AppDelegate.swift in Sources */,
 				8B0646452834142800171886 /* BaseAggragatedService.swift in Sources */,
+				8BAD70342835287700F0494B /* CustomView.swift in Sources */,
 				8B3A0AF92833D651009A2F84 /* SceneDelegate.swift in Sources */,
 				8B06464B2834145000171886 /* BaseViewController.swift in Sources */,
 				8B0646492834143E00171886 /* BaseProtocols.swift in Sources */,
 				8B064643283413F200171886 /* RequestManager.swift in Sources */,
 				8B06464D2834146100171886 /* APIClient.swift in Sources */,
+				8BAD70302835272C00F0494B /* MovieTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
