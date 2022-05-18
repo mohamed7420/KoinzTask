@@ -66,7 +66,8 @@ class GenericTableViewDataSource<T , Cell: UITableViewCell>: NSObject , TableVie
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
+        let item = unWrappingItem(indexPath: indexPath)
+        willDisplayItems(cell as! Cell , indexPath , item)
     }
     
     func unWrappingItem(indexPath: IndexPath) -> T?{
