@@ -24,6 +24,8 @@
 		8B3A0B0E2833D652009A2F84 /* KoinzTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A0B0D2833D652009A2F84 /* KoinzTaskTests.swift */; };
 		8B3A0B182833D652009A2F84 /* KoinzTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A0B172833D652009A2F84 /* KoinzTaskUITests.swift */; };
 		8B3A0B1A2833D652009A2F84 /* KoinzTaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A0B192833D652009A2F84 /* KoinzTaskUITestsLaunchTests.swift */; };
+		8B50CDB12835EA6E00F801D7 /* BannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B50CDAF2835EA6E00F801D7 /* BannerTableViewCell.swift */; };
+		8B50CDB22835EA6E00F801D7 /* BannerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B50CDB02835EA6E00F801D7 /* BannerTableViewCell.xib */; };
 		8BAD70302835272C00F0494B /* MovieTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAD702E2835272C00F0494B /* MovieTableCell.swift */; };
 		8BAD70312835272C00F0494B /* MovieTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BAD702F2835272C00F0494B /* MovieTableCell.xib */; };
 		8BAD70342835287700F0494B /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAD70332835287700F0494B /* CustomView.swift */; };
@@ -78,6 +80,8 @@
 		8B3A0B132833D652009A2F84 /* KoinzTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KoinzTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B3A0B172833D652009A2F84 /* KoinzTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoinzTaskUITests.swift; sourceTree = "<group>"; };
 		8B3A0B192833D652009A2F84 /* KoinzTaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoinzTaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8B50CDAF2835EA6E00F801D7 /* BannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTableViewCell.swift; sourceTree = "<group>"; };
+		8B50CDB02835EA6E00F801D7 /* BannerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerTableViewCell.xib; sourceTree = "<group>"; };
 		8BAD702E2835272C00F0494B /* MovieTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableCell.swift; sourceTree = "<group>"; };
 		8BAD702F2835272C00F0494B /* MovieTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableCell.xib; sourceTree = "<group>"; };
 		8BAD70332835287700F0494B /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
@@ -261,9 +265,19 @@
 			path = KoinzTaskUITests;
 			sourceTree = "<group>";
 		};
+		8B50CDAE2835EA5E00F801D7 /* BannerTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				8B50CDAF2835EA6E00F801D7 /* BannerTableViewCell.swift */,
+				8B50CDB02835EA6E00F801D7 /* BannerTableViewCell.xib */,
+			);
+			path = BannerTableCell;
+			sourceTree = "<group>";
+		};
 		8BAD702C2835270200F0494B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8B50CDAE2835EA5E00F801D7 /* BannerTableCell */,
 				8BAD702D2835270A00F0494B /* MovieTableCell */,
 			);
 			path = Cells;
@@ -444,6 +458,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B50CDB22835EA6E00F801D7 /* BannerTableViewCell.xib in Resources */,
 				8B3A0B032833D652009A2F84 /* LaunchScreen.storyboard in Resources */,
 				8B3A0B002833D652009A2F84 /* Assets.xcassets in Resources */,
 				8B064655283418DE00171886 /* Home.storyboard in Resources */,
@@ -579,6 +594,7 @@
 				8BAD7049283596C200F0494B /* Constants.swift in Sources */,
 				8BAD704B28359BEE00F0494B /* AppError.swift in Sources */,
 				8B06464F2834146A00171886 /* TargetType.swift in Sources */,
+				8B50CDB12835EA6E00F801D7 /* BannerTableViewCell.swift in Sources */,
 				8B0646472834143400171886 /* BasePresenter.swift in Sources */,
 				8B0646512834156000171886 /* FlikrAPI.swift in Sources */,
 				8BAD703728352B6900F0494B /* MovieListViewController.swift in Sources */,

@@ -151,3 +151,10 @@ extension UITableView{
         return cell
     }
 }
+
+
+extension String{
+    var xip: UINib{
+        return UINib(nibName: self, bundle: nil)
+    }
+}

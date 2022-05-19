@@ -18,11 +18,11 @@ extension CellProtocol{
     }
 }
 
-class GenericTableViewDataSource<T , Cell: UITableViewCell>: NSObject , TableViewDataSource where Cell: CellProtocol{
+class GenericTableViewDataSource<T>: NSObject , TableViewDataSource{
     
     typealias ItemClickListner = ((T? , IndexPath) -> Void)
-    typealias ConfigureCollectionCell = (Cell , IndexPath , T?) -> Void
-    typealias ItemWillDisplay = (Cell , IndexPath , T?) -> Void
+    typealias ConfigureCollectionCell = (UITableViewCell , IndexPath , T?) -> Void
+    typealias ItemWillDisplay = (UITableViewCell , IndexPath , T?) -> Void
     typealias ScrollViewDidEndDragging = (Bool) -> Void
     
     public var isDataLoading: Bool = false
@@ -42,22 +42,25 @@ class GenericTableViewDataSource<T , Cell: UITableViewCell>: NSObject , TableVie
         self.willDisplayItems = willDisplayItems
         self.paginateItemsList = paginateItemsList
         super.init()
-        configureCollectionView(cell: Cell.self)
-    }
-    
-    private func configureCollectionView<Cell: UITableViewCell>(cell: Cell.Type){
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(cell: cell)
+        tableView.register(cell: MovieTableCell.self)
+        tableView.register(cell: BannerTableViewCell.self)
         tableView.reloadData()
     }
- 
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items == nil ? 0 : items!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.deque() as Cell
+        if ((indexPath.row) % 5) == 0{
+            let cell = tableView.deque() as BannerTableViewCell
+            let item = unWrappingItem(indexPath: indexPath)
+            configureCollectionCell(cell  , indexPath , item)
+            return cell
+        }
+        let cell = tableView.deque() as MovieTableCell
         let item = unWrappingItem(indexPath: indexPath)
         configureCollectionCell(cell  , indexPath , item)
         return cell
@@ -71,7 +74,7 @@ class GenericTableViewDataSource<T , Cell: UITableViewCell>: NSObject , TableVie
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let item = unWrappingItem(indexPath: indexPath)
-        willDisplayItems(cell as! Cell , indexPath , item)
+        willDisplayItems(cell , indexPath , item)
     }
     
     func unWrappingItem(indexPath: IndexPath) -> T?{

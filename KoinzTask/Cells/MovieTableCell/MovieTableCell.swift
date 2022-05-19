@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class MovieTableCell: UITableViewCell, CellProtocol , CellViewProtocol{
+class MovieTableCell: UITableViewCell, CellViewProtocol{
    
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var imagePhoto: UIImageView!

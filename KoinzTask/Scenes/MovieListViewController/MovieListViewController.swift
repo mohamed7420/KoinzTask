@@ -10,7 +10,7 @@ import UIKit
 class MovieListViewController: BaseViewController , MovieListViewProtocol {
  
     @IBOutlet weak var tableView: UITableView!
-    private var genericTableViewDataSource: GenericTableViewDataSource<Photo , MovieTableCell>?
+    private var genericTableViewDataSource: GenericTableViewDataSource<Photo>?
     var presenter: MovieListPresenterProtocol?
     var page: Int = 1
     var totalPage: Int = 0
@@ -26,7 +26,12 @@ class MovieListViewController: BaseViewController , MovieListViewProtocol {
     private func initTableView(items: [Photo]){
         genericTableViewDataSource = GenericTableViewDataSource.init(items: items, tableView: tableView, configureCollectionCell: {[weak self] cell, indexPath , item  in
             guard let self = self else {return}
-            self.presenter?.configureCellView(cell: cell, for: indexPath.row)
+            if let cell = cell as? MovieTableCell{
+                self.presenter?.configureCellView(cell: cell, for: indexPath.row)
+            }
+            if let cell = cell as? BannerTableViewCell{
+                
+            }
             
         }, didSelectedItem: {[weak self] indexPath , item  in
             
@@ -35,7 +40,9 @@ class MovieListViewController: BaseViewController , MovieListViewProtocol {
         }, willDisplayItems: {[weak self] cell, indexPath , item  in
             
             guard let self = self else {return}
-            self.animateTableView(cell: cell)
+            if self.page == 1{
+                self.animateTableView(cell: cell)
+            }
             
         }, paginateItemsList: {[weak self] isDataLoading in
             guard let self = self else {return}
@@ -58,7 +65,7 @@ class MovieListViewController: BaseViewController , MovieListViewProtocol {
     
 
     
-    private func animateTableView(cell: MovieTableCell){
+    private func animateTableView(cell: UITableViewCell){
         let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, -500, 10, 0)
         cell.layer.transform = rotationTransform
         UIView.animate(withDuration: 1.0) {
