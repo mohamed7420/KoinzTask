@@ -7,17 +7,21 @@
 
 import UIKit
 
-class BannerTableViewCell: UITableViewCell{
-
+class BannerTableViewCell: UITableViewCell , CellBannerProtocol{
+ 
+    @IBOutlet weak var imagePhoto: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+    func set(farm: Int, server: String, id: String, secret: String) {
+        let url = Constants.httpProtocol + "\(farm)" + Constants.host + server + "/\(id)_\(secret)\(Constants.ext)"
+        guard let url = URL(string: url) else {return}
+        print(url)
+        imagePhoto.kf.setImage(with: url, placeholder: UIImage(named: "no_image_placeholder"))
     }
     
 }

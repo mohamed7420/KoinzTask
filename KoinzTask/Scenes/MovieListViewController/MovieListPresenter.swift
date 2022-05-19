@@ -63,4 +63,8 @@ extension MovieListPresenter: MovieListPresenterProtocol{
         cell.set(farm: item.farm ?? -1, server: item.server ?? "", id: item.id ?? "", secret: item.secret ?? "")
     }
     
+    func configureCellView(cell: CellBannerProtocol , for index: Int){
+        let item = items[index]
+        cell.set(farm: item.farm ?? -1, server: item.server ?? "", id: item.id ?? "", secret: item.secret ?? "")
+    }
 }

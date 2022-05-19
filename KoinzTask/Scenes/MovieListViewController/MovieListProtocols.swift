@@ -19,6 +19,7 @@ protocol MovieListPresenterProtocol: BasePresenterProtocol{
     var view: MovieListViewProtocol?{get set}
     func getAllPhotos(model: MoviePhoto)
     func configureCellView(cell: CellViewProtocol , for index: Int)
+    func configureCellView(cell: CellBannerProtocol , for index: Int)
     func getPhotosArray() -> [Photo]
     func getPhotoCount() -> Int
 }
@@ -26,4 +27,8 @@ protocol MovieListPresenterProtocol: BasePresenterProtocol{
 protocol CellViewProtocol{
     func set(farm: Int ,server: String ,id: String ,secret:String)
     func set(title: String)
+}
+
+protocol CellBannerProtocol{
+    func set(farm: Int ,server: String ,id: String ,secret:String)
 }

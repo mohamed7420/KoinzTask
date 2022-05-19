@@ -30,7 +30,7 @@ class MovieListViewController: BaseViewController , MovieListViewProtocol {
                 self.presenter?.configureCellView(cell: cell, for: indexPath.row)
             }
             if let cell = cell as? BannerTableViewCell{
-                
+                self.presenter?.configureCellView(cell: cell, for: indexPath.row)
             }
             
         }, didSelectedItem: {[weak self] indexPath , item  in
