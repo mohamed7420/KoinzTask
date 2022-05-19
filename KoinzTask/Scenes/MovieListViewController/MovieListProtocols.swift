@@ -10,6 +10,7 @@ import Foundation
 
 protocol MovieListViewProtocol: BaseViewProtocol{
     var presenter: MovieListPresenterProtocol?{get set}
+    func set(totalPage: Int)
     func set(photos: [Photo])
     func refresh()
 }
@@ -18,6 +19,8 @@ protocol MovieListPresenterProtocol: BasePresenterProtocol{
     var view: MovieListViewProtocol?{get set}
     func getAllPhotos(model: MoviePhoto)
     func configureCellView(cell: CellViewProtocol , for index: Int)
+    func getPhotosArray() -> [Photo]
+    func getPhotoCount() -> Int
 }
 
 protocol CellViewProtocol{

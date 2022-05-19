@@ -23,20 +23,24 @@ class GenericTableViewDataSource<T , Cell: UITableViewCell>: NSObject , TableVie
     typealias ItemClickListner = ((T? , IndexPath) -> Void)
     typealias ConfigureCollectionCell = (Cell , IndexPath , T?) -> Void
     typealias ItemWillDisplay = (Cell , IndexPath , T?) -> Void
+    typealias ScrollViewDidEndDragging = (Bool) -> Void
     
+    public var isDataLoading: Bool = false
     public var items: [T]?
     public var didSelectedItem: ItemClickListner!
     public var tableView: UITableView!
     public var configureCollectionCell: ConfigureCollectionCell!
     public var willDisplayItems: ItemWillDisplay!
+    public var paginateItemsList: ScrollViewDidEndDragging!
     
-    
-    init(items: [T] , tableView: UITableView , configureCollectionCell: @escaping ConfigureCollectionCell , didSelectedItem: @escaping ItemClickListner , willDisplayItems: @escaping ItemWillDisplay) {
+    init(items: [T] , tableView: UITableView , configureCollectionCell: @escaping ConfigureCollectionCell , didSelectedItem: @escaping ItemClickListner , willDisplayItems: @escaping ItemWillDisplay ,paginateItemsList: @escaping ScrollViewDidEndDragging) {
+        
         self.items = items
         self.tableView = tableView
         self.configureCollectionCell = configureCollectionCell
         self.didSelectedItem = didSelectedItem
         self.willDisplayItems = willDisplayItems
+        self.paginateItemsList = paginateItemsList
         super.init()
         configureCollectionView(cell: Cell.self)
     }
@@ -77,4 +81,17 @@ class GenericTableViewDataSource<T , Cell: UITableViewCell>: NSObject , TableVie
         return nil
     }
     
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        isDataLoading = false
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        print("scrollViewDidEndDecelerating")
+    }
+    
+    //Pagination
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        
+        paginateItemsList(isDataLoading)
+    }
 }

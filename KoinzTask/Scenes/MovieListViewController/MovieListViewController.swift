@@ -8,17 +8,19 @@
 import UIKit
 
 class MovieListViewController: BaseViewController , MovieListViewProtocol {
-
+ 
     @IBOutlet weak var tableView: UITableView!
-    
     private var genericTableViewDataSource: GenericTableViewDataSource<Photo , MovieTableCell>?
     var presenter: MovieListPresenterProtocol?
-    
+    var page: Int = 1
+    var totalPage: Int = 0
+    var newPhotos = [Photo]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter = MovieListPresenter(view: self)
-        presenter?.getAllPhotos(model: MoviePhoto(method: "flickr.photos.search", format: "json&nojsoncallback", nojsoncallback: 50, text: "Color", page: 1, per_page: 20, api_key: "d17378e37e555ebef55ab86c4180e8dc"))
         
+        presenter = MovieListPresenter(view: self)
+        presenter?.getAllPhotos(model: MoviePhoto(method: Constants.method, format: Constants.format, nojsoncallback: Constants.nojsoncallback, text: Constants.text, page: page, per_page: Constants.per_pag, api_key: Constants.api_key))
     }
     
     private func initTableView(items: [Photo]){
@@ -34,9 +36,27 @@ class MovieListViewController: BaseViewController , MovieListViewProtocol {
             
             guard let self = self else {return}
             self.animateTableView(cell: cell)
-
+            
+        }, paginateItemsList: {[weak self] isDataLoading in
+            guard let self = self else {return}
+            self.paginateItems()
         })
     }
+    
+    
+    private func paginateItems(){
+        if ((self.tableView.contentOffset.y + self.tableView.frame.size.height) >= self.tableView.contentSize.height){
+            print("Scrolling down")
+            if self.page < self.totalPage{
+                self.page += 1
+                self.presenter?.getAllPhotos(model: MoviePhoto(method: Constants.method, format: Constants.format, nojsoncallback: Constants.nojsoncallback, text: Constants.text, page: self.page, per_page: Constants.per_pag, api_key: Constants.api_key))
+                return
+            }
+            self.page = 1
+        }
+    }
+    
+
     
     private func animateTableView(cell: MovieTableCell){
         let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, -500, 10, 0)
@@ -46,12 +66,16 @@ class MovieListViewController: BaseViewController , MovieListViewProtocol {
         }
     }
 
-    func set(photos: [Photo]) {
-        initTableView(items: photos)
+    func set(photos: [Photo]){
+        newPhotos.append(contentsOf: photos)
+        initTableView(items: newPhotos)
     }
     
+    func set(totalPage: Int) {
+        self.totalPage = totalPage
+    }
     
-    
+
     
     func refresh() {
         self.tableView.reloadData()

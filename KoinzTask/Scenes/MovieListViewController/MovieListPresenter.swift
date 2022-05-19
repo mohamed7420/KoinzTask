@@ -19,6 +19,7 @@ class MovieListPresenter: BasePresenter{
 }
 
 extension MovieListPresenter: MovieListPresenterProtocol{
+
     
     func getAllPhotos(model: MoviePhoto) {
         self.view?.showLoading()
@@ -26,15 +27,12 @@ extension MovieListPresenter: MovieListPresenterProtocol{
             self.view?.hideLoading()
             if response.stat == StatusCases.success.rawValue{
                 DispatchQueue.main.async {
+                    self.view?.set(totalPage: response.photos?.total ?? -1)
                     if let photos = response.photos?.photo{
-                        if photos.count > 0{
-                            self.view?.set(photos: photos)
-                        }else{
-                            self.view?.set(photos: [])
-                        }
-                        self.items = photos
-                        self.view?.refresh()
+                        self.view?.set(photos: photos)
+                        self.items.append(contentsOf: photos)
                     }
+                    self.view?.refresh()
                 }
             }
             
@@ -46,6 +44,17 @@ extension MovieListPresenter: MovieListPresenterProtocol{
             }
         }, onCompleted: nil, onDisposed: nil)
     }
+    
+    
+    func getPhotosArray() -> [Photo] {
+        return items
+    }
+    
+    func getPhotoCount() -> Int {
+        return items.count
+    }
+    
+    
     
     
     func configureCellView(cell: CellViewProtocol , for index: Int){
