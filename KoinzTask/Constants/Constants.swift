@@ -20,3 +20,7 @@ struct Constants{
     static let per_pag = 20
     static let nojsoncallback = 50
 }
+
+struct Storyboard{
+    static let photoFullScreenViewController = "PhotoFullScreenViewController"
+}

@@ -19,6 +19,7 @@ class MovieListPresenter: BasePresenter{
 }
 
 extension MovieListPresenter: MovieListPresenterProtocol{
+  
 
     
     func getAllPhotos(model: MoviePhoto) {
@@ -53,8 +54,6 @@ extension MovieListPresenter: MovieListPresenterProtocol{
     func getPhotoCount() -> Int {
         return items.count
     }
-    
-    
     
     
     func configureCellView(cell: CellViewProtocol , for index: Int){

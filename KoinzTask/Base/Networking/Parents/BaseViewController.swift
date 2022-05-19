@@ -42,7 +42,14 @@ class BaseViewController: UIViewController, BaseViewProtocol, UIGestureRecognize
         }
         
     }
-    
+    func redirectToFullImageScreen(identifier: String , image: UIImage?){
+        let vc = UIStoryboard.init(name: "Home", bundle: nil).instantiateViewController(withIdentifier: identifier) as! PhotoFullScreenViewController
+        if let image = image {
+            vc.image = image
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
 
     //MARK:- Loading and alerts
     func showLoading() {

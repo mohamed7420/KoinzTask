@@ -20,7 +20,7 @@ extension CellProtocol{
 
 class GenericTableViewDataSource<T>: NSObject , TableViewDataSource{
     
-    typealias ItemClickListner = ((T? , IndexPath) -> Void)
+    typealias ItemClickListner = ((UITableViewCell , T? , IndexPath) -> Void)
     typealias ConfigureCollectionCell = (UITableViewCell , IndexPath , T?) -> Void
     typealias ItemWillDisplay = (UITableViewCell , IndexPath , T?) -> Void
     typealias ScrollViewDidEndDragging = (Bool) -> Void
@@ -68,8 +68,9 @@ class GenericTableViewDataSource<T>: NSObject , TableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        guard let cell = tableView.cellForRow(at: indexPath) else {return}
         let item = unWrappingItem(indexPath: indexPath)
-        didSelectedItem(item , indexPath)
+        didSelectedItem(cell , item , indexPath)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

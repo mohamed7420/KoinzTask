@@ -20,8 +20,11 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="meO-EA-llF">
                         <rect key="frame" x="0.0" y="0.0" width="381" height="150"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="eaP-Og-FTL">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="eaP-Og-FTL">
                                 <rect key="frame" x="0.0" y="0.0" width="381" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="TGW-yD-tH9"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -33,9 +33,17 @@ class MovieListViewController: BaseViewController , MovieListViewProtocol {
                 self.presenter?.configureCellView(cell: cell, for: indexPath.row)
             }
             
-        }, didSelectedItem: {[weak self] indexPath , item  in
+        }, didSelectedItem: {[weak self] cell , item , indexPath  in
             
-            guard let _ = self else {return}
+            guard let self = self else {return}
+            let identifier = Storyboard.photoFullScreenViewController
+            
+            if let cell = cell as? MovieTableCell{
+                self.redirectToFullImageScreen(identifier: identifier, image: cell.imagePhoto.image)
+            }
+            if let cell = cell as? BannerTableViewCell{
+                    self.redirectToFullImageScreen(identifier: identifier, image: cell.imagePhoto.image)
+            }
             
         }, willDisplayItems: {[weak self] cell, indexPath , item  in
             
