@@ -54,7 +54,7 @@ class GenericTableViewDataSource<T>: NSObject , TableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if ((indexPath.row) % 5) == 0{
+        if ((indexPath.row + 1) % 6) == 0 && indexPath.row != 0{
             let cell = tableView.deque() as BannerTableViewCell
             let item = unWrappingItem(indexPath: indexPath)
             configureCollectionCell(cell  , indexPath , item)
