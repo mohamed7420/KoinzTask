@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PhotoFullScreenViewController: UIViewController {
+class PhotoFullScreenViewController: BaseViewController {
 
     @IBOutlet weak var photoImageView: UIImageView!
     var image: UIImage?

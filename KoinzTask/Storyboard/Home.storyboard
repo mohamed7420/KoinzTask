@@ -50,17 +50,45 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wdx-mY-QQe">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpP-LG-YPY">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hqp-zz-CEp">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="wmc-cR-nPR"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="chevron.backward.circle.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="back:" destination="4VI-0E-HUf" eventType="touchUpInside" id="A6m-PK-5Wk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4Wm-fG-e4b"/>
+                                    <constraint firstItem="Hqp-zz-CEp" firstAttribute="leading" secondItem="vpP-LG-YPY" secondAttribute="leading" id="4ew-Ge-6Ec"/>
+                                    <constraint firstAttribute="bottom" secondItem="Hqp-zz-CEp" secondAttribute="bottom" id="I3l-78-gP7"/>
+                                    <constraint firstItem="Hqp-zz-CEp" firstAttribute="top" secondItem="vpP-LG-YPY" secondAttribute="top" id="Zpf-XQ-HNs"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QYL-hp-t9W"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Wdx-mY-QQe" firstAttribute="trailing" secondItem="QYL-hp-t9W" secondAttribute="trailing" id="D0W-CY-04T"/>
+                            <constraint firstItem="vpP-LG-YPY" firstAttribute="top" secondItem="QYL-hp-t9W" secondAttribute="top" id="Dq0-dC-0Bu"/>
                             <constraint firstItem="Wdx-mY-QQe" firstAttribute="top" secondItem="Xdn-XN-6eO" secondAttribute="top" id="Fbw-s9-t6a"/>
                             <constraint firstItem="Wdx-mY-QQe" firstAttribute="leading" secondItem="QYL-hp-t9W" secondAttribute="leading" id="K0L-hb-FqV"/>
                             <constraint firstAttribute="bottom" secondItem="Wdx-mY-QQe" secondAttribute="bottom" id="crx-k7-QEk"/>
+                            <constraint firstItem="vpP-LG-YPY" firstAttribute="leading" secondItem="QYL-hp-t9W" secondAttribute="leading" id="f9z-pc-v4b"/>
+                            <constraint firstItem="QYL-hp-t9W" firstAttribute="trailing" secondItem="vpP-LG-YPY" secondAttribute="trailing" id="he9-2T-G1W"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="Hqp-zz-CEp" id="sU8-Af-8gc"/>
                         <outlet property="photoImageView" destination="Wdx-mY-QQe" id="Jjf-zE-wsn"/>
                     </connections>
                 </viewController>
@@ -87,4 +115,7 @@
             <point key="canvasLocation" x="44.927536231884062" y="71.651785714285708"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chevron.backward.circle.fill" catalog="system" width="128" height="121"/>
+    </resources>
 </document>
